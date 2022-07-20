@@ -1,3 +1,10 @@
 {
-  "bearerToken": "GET_TOKEN_FROM_TWITTER"
+  "bearerToken": "GET_TOKEN_FROM_TWITTER",
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "useSsl": true,
+    "user": "GMAIL_USERNAME",
+    "password": "GMAIL_APPLICATION_PASSWORD"
+  }
 }

@@ -1,18 +1,33 @@
 import config from './config';
 import { Client } from 'twitter-api-sdk';
+import { SMTPClient, Message } from 'emailjs';
 
-const { bearerToken } = config;
-
-const client = new Client(bearerToken);
+const twitterClient = new Client(config.bearerToken);
 
 (async () => {
   try {
-    const recentSearch = await client.tweets.tweetsRecentSearch({
+    const recentSearch = await twitterClient.tweets.tweetsRecentSearch({
       query: '#BeATC (from:FAANews) -is:retweet',
     });
-    console.dir(recentSearch.meta?.result_count || 0, {
-      depth: null,
-    });
+
+    if (recentSearch.meta?.result_count && recentSearch.meta.result_count > 0) {
+      const smtpClient = new SMTPClient({
+        host: config.smtp.host,
+        port: config.smtp.port,
+        ssl: config.smtp.useSsl,
+        user: config.smtp.user,
+        password: config.smtp.password,
+      });
+
+      const message = new Message({
+        text: 'There is a new twitter #BeATC Twitter post!',
+        from: 'dbetz@darkstar.localdomain',
+        to: 'hashref@gmail.com',
+        subject: 'FAA BeATC Twitter Update',
+      });
+
+      smtpClient.send(message, () => {});
+    }
   } catch (error) {
     console.log(error);
   }
