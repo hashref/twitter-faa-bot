@@ -16,6 +16,7 @@
     "noImplicitReturns": true,
     "moduleResolution": "node"
   },
+  "exclude": ["./node_modules"],
   "ts-node": {
     "esm": true,
     "compilerOptions": {
