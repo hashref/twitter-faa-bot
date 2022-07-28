@@ -11,6 +11,7 @@ const twitterClient = new Client(config.bearerToken);
     });
 
     if (recentSearch.meta?.result_count && recentSearch.meta.result_count > 0) {
+      console.log(recentSearch.meta.result_count + ' new Tweets found!');
       const smtpClient = new SMTPClient({
         host: config.smtp.host,
         port: config.smtp.port,
@@ -27,6 +28,8 @@ const twitterClient = new Client(config.bearerToken);
       });
 
       smtpClient.send(message, () => {});
+    } else {
+      console.log('No new Tweets found.');
     }
   } catch (error) {
     console.log(error);
