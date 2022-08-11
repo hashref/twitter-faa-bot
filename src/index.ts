@@ -4,6 +4,11 @@ import { SMTPClient, Message } from 'emailjs';
 
 const twitterClient = new Client(config.bearerToken);
 
+function logMessage(message: string) {
+  const date = new Date().toISOString();
+  return `[${date}] ${message}`;
+}
+
 (async () => {
   try {
     const recentSearch = await twitterClient.tweets.tweetsRecentSearch({
@@ -29,7 +34,7 @@ const twitterClient = new Client(config.bearerToken);
 
       smtpClient.send(message, () => {});
     } else {
-      console.log('No new Tweets found.');
+      console.log(logMessage('No new Tweets found.'));
     }
   } catch (error) {
     console.log(error);
