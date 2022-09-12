@@ -7,7 +7,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "config": "^3.3.7",
+    "config": "^3.3.8",
     "emailjs": "^4.0.1",
     "twitter-api-sdk": "^1.1.0"
   },
