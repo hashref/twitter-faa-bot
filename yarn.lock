@@ -193,10 +193,10 @@ ts-node@10.9.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-twitter-api-sdk@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/twitter-api-sdk/-/twitter-api-sdk-1.1.0.tgz#9bcf525a0c3da311683d3a87e74357ba8479ded6"
-  integrity sha512-EmYSUwf1rw57h7fnq8SLtMSt6+8orr1N4q5m5J+R/ZSzvvo3QCCyJC973/OCxH5j9F1iV0vqpLmYh/Yq87XjLA==
+twitter-api-sdk@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/twitter-api-sdk/-/twitter-api-sdk-1.2.0.tgz#595ea699a7b91997548b42e63fe6ca133ade0009"
+  integrity sha512-D9s+9JYSyJNvylNdMOJTjZ5wPj7erQrjXTOo7y0OTWL1rKFe4yWh7gxorcxe3VJV42tihp1YrFRmk8Tovw+T7w==
   dependencies:
     abort-controller "^3.0.0"
     node-fetch "^2.6.1"
