@@ -9,7 +9,7 @@
   "dependencies": {
     "config": "^3.3.8",
     "emailjs": "^4.0.1",
-    "twitter-api-sdk": "^1.2.0"
+    "twitter-api-sdk": "^1.2.1"
   },
   "devDependencies": {
     "@types/config": "3.3.0",
